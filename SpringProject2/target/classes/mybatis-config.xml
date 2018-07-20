@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- <package name="com.board.domain"/> -->
+		<typeAlias type="com.project.domain.AnswerVO" alias="AnswerVO" />
+		<typeAlias type="com.project.domain.MemberVO" alias="MemberVO" />
+		<typeAlias type="com.project.domain.QuestionVO" alias="QuestionVO" />
+		<typeAlias type="com.project.domain.SubjectVO" alias="SubjectVO" />
+		<typeAlias type="com.project.domain.TackClassVO" alias="TackClassVO" />
+		<typeAlias type="com.project.domain.TeacherA_VO" alias="TeacherA_VO" />
+		<typeAlias type="com.project.domain.TeacherQ_VO" alias="TeacherQ_VO" />
+
+
+	</typeAliases>
+</configuration>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.TeacherMapper">
+	
+	<!-- 회원일때 -->
+	<insert id="create">
+		insert into sp_teacher_q (title, content, id, writer)
+		values(#{title}, #{content}, #{id}, #{writer})
+	</insert>
+
+	<select id="read" resultType="TeacherQ_VO">
+		select
+		qno, title, content, id, writer
+		regdate, viewcnt, replycnt
+		from
+		sp_teacher_q
+		where qno = #{qno}
+	</select>
+
+	<update id="update">
+		update sp_teacher_q set title =#{title}, content
+		=#{content}, updatedate=now()
+		where qno = #{qno}
+	</update>
+
+	<delete id="delete">
+		delete from sp_teacher_q where qno = #{qno}
+	</delete>
+
+	<select id="listAll" resultType="TeacherQ_VO">
+		 <![CDATA[
+		 select 
+		   qno, title, content, id, writer, regdate, viewcnt 
+		 from 
+		   sp_teacher_q
+		 where qno > 0 
+		 order by qno desc, regdate desc
+		 ]]>
+	</select>
+	<select id="listPage" resultType="TeacherQ_VO">
+		<![CDATA[
+		 select 
+		   qno, title, content, id, writer, regdate, viewcnt 
+		 from 
+		   sp_teacher_q
+		 where qno > 0 
+		 order by qno desc, regdate desc
+		 limit #{page}, 10
+ 		]]>
+	</select>
+	<select id="listCriteria" resultType="TeacherQ_VO">
+		 <![CDATA[
+		 select 
+		   qno, title, content, id, writer , regdate, viewcnt, replycnt 
+		 from 
+		   sp_teacher_q
+		 where qno > 0 
+		 order by qno desc, regdate desc
+		 limit #{pageStart}, #{perPageNum}
+		 ]]>
+	</select>
+	<select id="countPaging" resultType="int">
+		 <![CDATA[
+		 select 
+		   count(qno) 
+		 from 
+		 sp_teacher_q
+		 where 
+		   qno > 0 
+		 ]]>
+	</select>
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				and title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'c'.toString()">
+				and content like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'w'.toString()">
+				and writer like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'tc'.toString()">
+				and ( title like CONCAT('%', #{keyword}, '%') OR content
+				like
+				CONCAT('%', #{keyword}, '%'))
+			</if>
+			<if test="searchType == 'cw'.toString()">
+				and ( content like CONCAT('%', #{keyword}, '%') OR writer
+				like
+				CONCAT('%', #{keyword}, '%'))
+			</if>
+			<if test="searchType == 'tcw'.toString()">
+				and ( title like CONCAT('%', #{keyword}, '%')
+				OR
+				content
+				like CONCAT('%', #{keyword}, '%')
+				OR
+				writer like CONCAT('%',
+				#{keyword}, '%'))
+			</if>
+		</if>
+	</sql>
+
+	<select id="listSearch" resultType="TeacherQ_VO">
+		<![CDATA[  
+		  select * 
+		  from sp_teacher_q 
+		  where qno > 0 
+		]]>
+
+		<include refid="search"></include>
+  
+		<![CDATA[    
+		  order by qno desc
+		  limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+
+	<select id="listSearchCount" resultType="int">
+		<![CDATA[  
+		  select count(qno) 
+		  from sp_teacher_q 
+		  where qno > 0 
+		]]>
+		<include refid="search"></include>
+
+	</select>
+	<update id="updateReplyCnt">
+		update sp_teacher_q set replycnt = replycnt + #{rcnt}
+		where qno = #{qno}
+	</update>
+	<update id="updateViewCnt">
+		update sp_teacher_q set viewcnt = viewcnt +1 where qno =
+		#{qno}
+	</update>
+	<insert id="addAttach">
+		insert into sp_teacher_f(fullname, qno) values (#{fullname}, LAST_INSERT_ID())
+	</insert>
+
+
+	<select id="getAttach" resultType="string">
+		select fullname from sp_teacher_f where qno = #{qno} order by regdate
+	</select>
+
+
+	<delete id="deleteAttach">
+		delete from sp_teacher_f where qno = #{qno}
+	</delete>
+
+	<insert id="replaceAttach">
+		insert into sp_teacher_f(fullname, qno) values (#{fullname}, #{qno})
+	</insert>
+	
+	</mapper>

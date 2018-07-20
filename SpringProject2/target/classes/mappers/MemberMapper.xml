@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.memberMapper">
+	<!-- public void insertMember(MemberVO mvo) throws Exception; public MemberVO 
+		getMember(String id) throws Exception; public List<MemberVO> getMemberList(Criteria 
+		cri) throws Exception; //아이디 중복확인 public int checkId(String id) throws Exception; 
+		// 로그인 public int checkMember(MemberVO mvo) throws Exception; public void 
+		deleteMember(String id) throws Exception; public int getTotal() throws Exception; 
+		public String stringToDate(MemberVO member) throws Exception; public String 
+		checkbirthday(String id) throws Exception; public void updateMember(MemberVO 
+		mvo) throws Exception; -->
+
+	<insert id="insert">
+		insert into sp_member
+		(id,pwd,name,birthday,tel,ptel,address,email,school,joindate)
+		values (#{id}, #{pwd}, #{name}, #{birthday},  #{tel},
+		#{ptel}, #{address}, #{email}, #{school},now())
+	</insert>
+	
+	<update id="update">
+	update sp_member set pwd=#{pwd}, name=#{name},tel=#{tel},ptel=#{ptel},address=#{address},email=#{email},school=#{school} where id=#{id}
+	</update>
+	
+	<delete id="delete">
+	delete from sp_member where id=#{id}
+	</delete>
+	
+	
+</mapper>

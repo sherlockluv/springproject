@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.UserMapper">
+	<select id="login" resultType="MemberVO">
+
+		select id, pwd, name, agree from
+		sp_member where id = #{id} and pwd = #{pwd}
+
+	</select>
+	<update id="keepLogin">
+		update sp_member set sessionKey = #{sessionId}, sessionLimit = #{next} where
+		id = #{id}
+	</update>
+
+	<select id="checkUserWithSessionKey" resultType="MemberVO">
+		select * from sp_member where sessionKey = #{value} and sessionlimit > now()
+	</select>
+</mapper>

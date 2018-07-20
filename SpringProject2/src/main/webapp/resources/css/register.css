@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+.register_a {
+	font-family: NanumBarunGothic;
+}
+
+.register_center {
+	display: inline-block;
+	width: 1080px;
+}
+
+.register_right {
+	float: right;
+	display: inline-block;
+	width: 870px;
+	text-align: center;
+}
+
+#register_big {
+	float: right;
+	margin: 0 auto;
+}
+
+#register_wrap {
+	margin: 50px auto 0px;
+	border: 1px solid #eeeeee;
+}
+
+.register_box {
+	border-right: 1px solid #eeeeee;
+	display: inline-block;
+	width: 320px;
+	height: 400px;
+	padding: 0;
+}
+
+#register_box3 {
+	display: inline-block;
+	width: 320px;
+	height: 400px;
+	padding: 0;
+}
+
+#register_wrap img {
+	display: inline-block;
+	margin: 50px auto;
+}
+
+#register_p {
+	float: left;
+	margin-top: 10px;
+}
+
+.register_ok {
+	display: block;
+	width: 250px;
+	height: 50px;
+	background-color: #f4f6f9;
+	margin: 0 auto;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.register_span {
+	display: inline-block;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.register_left {
+	float: left;
+	width: 250px;
+	height: 1000px;
+	margin-top: 10px;
+}
+
+.register_left ul {
+	height: 60px;
+}
+
+.register_left li {
+	display: inline-block;
+	margin: 0 auto;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 60px;
+}
+
+#register_left_01_box {
+	background-color: #ef544d;
+	height: 80px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+#register_left_02_box {
+	background-color: #e9edf3;
+	height: 15px;
+}
+
+#register_left_01_span {
+	font-size: 22px;
+	color: #fff;
+	line-height: 80px;
+	font-weight: bold;
+}
+
+.register_a:link {
+	text-decoration: none;
+	font-size: 17px;
+	color: #46494b;
+}
+
+.register_a:hover {
+	color: #ef544d;
+	font-weight: bold;
+}
+
+.register_a:visited {
+	color: #46494b;
+}
+
+.register_left li {
+	display: block;
+	border-bottom: 1px solid #e9edf3;
+}
+
+.register_left li:hover {
+	background-color: #f0f0f0;
+}
+
+#register_left_03_box {
+	border: 1px solid #e9edf3;
+	height: inherit;
+}
+
+#register_wrap_box_01_span_01 {
+	font-size: 17px;
+	color: #72685b;
+	display: block;
+}
+
+#register_wrap_box_01_span_02 {
+	display: block;
+	font-weight: bold;
+	font-size: 40px;
+	color: #ef544d;
+}
+
+#register_big_box_01 {
+	margin-top: 50px;
+}
+
+.registerA_textarea {
+	float: left;
+	width: 870px;
+	height: 200px;
+	margin-top: 20px;
+	padding: 40px 40px;
+	overflow: auto;
+	font-size: 12px;
+	text-align: left;
+	border: 1px solid #e9edf3;
+	line-height: 15pt;
+	color: #666;
+	word-spacing: 2px;
+	letter-spacing: 0.05px;
+	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	clear: both;
+}
+
+.cont_tit {
+	display: block;
+	font-size: 14px;
+	color: #333;
+	font-weight: bold;
+}
+
+.check {
+	float: right;
+	display: block;
+	margin-top: 10px;
+	font-size: 12px;
+	line-height: 12pt;
+	color: #666;
+	word-spacing: 2px;
+	letter-spacing: 0.05px;
+	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	font-weight: bold;
+}
+
+.check2 {
+	
+	
+
+	font-size: 12px;
+	color: #8b8f92;
+	word-spacing: 2px;
+	letter-spacing: 0.05px;
+	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	font-weight: bold;
+}
+
+.main_font {
+
+	font-weight: bold;
+	color: #333;
+	font-size: 13px;
+	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+}
+
+
+.check_import {
+	color: #047e89;
+	font-weight: bold;
+}
+
+.register_input {
+	font-size: 25px;
+	margin: 30px 0 22px;
+	color: #333;
+	float: left;
+	font-weight: bold;
+}
+
+.register_text {
+	margin-top: 20px;
+	clear: both;
+	float: left;
+	color: #333;
+	font-size: 15px;
+	display: block;
+}
+
+.modalfade {
+	display: block;
+	clear: both;
+	margin: 100px;
+}
+
+.modal_header {
+	margin-top: 150px;
+	float: left;
+	width:100%;
+	border:1px solid #666;
+	padding:10px 30px;
+}
+
+
+.form-group {
+	width: 100%;
+	borde-topr:1px solid #666;
+	
+
+}
+
+
+.form-control {
+	width: 100%;
+	
+}
+
+th,td,button, input {
+
+	font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+	line-height: 17px;
+	font-size: 12px;
+	color:#333;
+
+}
+
+
+table {
+	
+
+	margin:100px auto;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+border-spacing:0px;
+	  border-collapse: separate;
+	
+}
+
+
+td, th{
+	display: table-cell;
+	vertical-align: inherit;
+	text-align: left;
+	
+}
+
+td{
+
+	padding:20px  20px;
+	margin: 0px;
+	border-bottom: 1px solid #e7e7e7;
+	border-collapse: collapse;
+
+}
+
+.checkmark {
+
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+.checkmark:after {
+    left: 5px;
+    top: 3px;
+    width: 2px;
+    height: 4px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
