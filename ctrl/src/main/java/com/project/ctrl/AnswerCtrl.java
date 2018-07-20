@@ -25,6 +25,9 @@ import com.project.service.AnswerService;
 @RequestMapping("/replies")
 public class AnswerCtrl {
 	
+	/*
+	 * 댓글 서비스 의존성 주입
+	 * */
 	@Inject
 	  private AnswerService service;
 
